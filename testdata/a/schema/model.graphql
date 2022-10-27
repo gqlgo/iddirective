@@ -1,0 +1,16 @@
+type Type {
+    id: ID! # OK
+    field: String!
+    fieldWithIdDirective(id: ID! @id(kind: "Kind")): FieldWithIdDirective
+    fieldWithNoIdDirective(id: ID!): FieldWithNoIdDirective # want "fieldWithNoIdDirective has no id directive"
+}
+
+type FieldWithIdDirective {
+    id: ID! # OK
+    field: String!
+}
+
+type FieldWithNoIdDirective {
+    id: ID! # OK
+    field: String!
+}
