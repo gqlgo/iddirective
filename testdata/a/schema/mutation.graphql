@@ -1,0 +1,22 @@
+type Mutation {
+    mutation(input: MutationInput!): MutationPayload!
+    NoIdDirectiveMutation(noIdDirectiveMutationInput: NoIdDirectiveMutationInput): NoIdDirectiveMutationPayload!
+}
+
+input MutationInput {
+    name: String!
+    id: ID! @id(kind: "Kind")
+}
+
+type MutationPayload {
+    field: String!
+}
+
+input NoIdDirectiveMutationInput {
+    name: String!
+    adminID: ID! # want "adminID has no id directive"
+}
+
+type NoIdDirectiveMutationPayload {
+    field: String!
+}
