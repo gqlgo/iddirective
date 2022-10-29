@@ -35,7 +35,7 @@ func run() func(pass *gqlanalysis.Pass) (interface{}, error) {
 					for _, arg := range field.Arguments {
 						if arg.Type.NamedType == "ID" {
 							if arg.Directives.ForName("id") == nil {
-								pass.Reportf(field.Position, "%s has no id directive", field.Name)
+								pass.Reportf(field.Position, "argument %s of %s has no id directive", arg.Name, field.Name)
 							}
 						}
 					}
