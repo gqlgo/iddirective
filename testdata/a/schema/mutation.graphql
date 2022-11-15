@@ -14,7 +14,7 @@ type MutationPayload {
 
 input NoIdDirectiveMutationInput {
     name: String!
-    adminID: ID! # want "adminID has no id directive"
+    id: ID! # want "id has no id directive"
 }
 
 type NoIdDirectiveMutationPayload {
